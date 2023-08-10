@@ -1,0 +1,449 @@
+/* Hannah Bashara*/
+
+/* ------------ CSS RESET ------------ */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ------------ BRANDING ------------ */
+
+/* Typography */
+
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap');
+
+h1,
+h2,
+h3 {
+    font-family: 'Molle';
+}
+
+h4,
+p,
+q,
+small,
+nav,
+button,
+form, 
+footer {
+    font-family: 'Montserrat';
+}
+
+/* Color Palette */
+
+:root {
+    --yellow: #F6D64A;
+    --teal: #55BCD5;
+    --purple: #9B26B0;
+    --blue: #499BD2;
+    --dark-gray: #222222;
+    --light-gray: #EAEAEA;
+    --white: #FFFFFF;
+    --black: #000000;
+}
+
+
+
+#skip {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#skip:focus {
+    position: static;
+    width: auto;
+    height: auto;
+}
+
+/* --- Header --- */
+
+html{
+    min-width: 320px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(var(--teal), var(--white));
+}
+
+h1{
+    font-size: 40px;
+    color: var(--dark-gray);
+
+}
+
+/* Hidden Accessibility */
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Nav */
+#menu-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu-toggle input {
+    position: absolute;
+    left: -1px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+#menu-toggle label {
+    padding: 15px 60px;
+    background-color: var(--yellow);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#menu-toggle label:hover {}
+
+#menu-toggle ul {
+    position: absolute;
+    top: 46px;
+    right: -100%;
+
+}
+
+#menu-toggle a {
+    display: block;
+    background-color: var(--teal);
+    color: var(--black);
+    text-decoration: none;
+    padding: 2rem;
+    border-bottom: 1px solid var(--black);
+}
+
+#menu-toggle a:hover {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+#menu-toggle input:checked~label {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: var(--dark-gray);
+    color: var(--white);
+    text-align: center;
+
+}
+
+#menu-toggle input:checked~label:hover {}
+
+#menu-toggle input:checked~ul {
+    position: absolute;
+    left: 0;
+    text-align: center;
+    max-width: 100%;
+    width: 100%;
+}
+
+#menu-toggle input:not(:checked)~ul {}
+
+
+/* --- Main --- */
+
+article>section {
+    padding: 1rem;
+}
+
+h3 {
+    padding: .5rem;
+}
+
+/* Intro Section */
+
+#intro #img-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .75em;
+
+}
+
+#img-grid img {
+    width: 100%;
+}
+
+/* Plan Section */
+
+#plan {
+    background-color: var(--yellow);
+    margin-top: 1rem;
+}
+
+
+
+#plan div {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: .5rem;
+    justify-content: center;
+}
+
+#plan section {
+    background-color: var(--teal);
+    border: .125rem solid var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+
+}
+
+#plan h4 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#plan img {
+    display: flex;
+}
+
+/* Testimonials Section */
+
+#testimonials div {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+}
+
+#testimonials section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#testimonials h4 {
+    text-transform: uppercase;
+}
+
+#testimonials q {
+    font-style: italic;
+}
+
+/* About Section */
+
+#about {
+    background-color: var(--blue);
+}
+
+#about div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#about section {
+    text-align: center;
+}
+
+#about h4 {
+    text-transform: uppercase;
+}
+
+/* Contact */
+
+#contact h3 > span {
+    font-family: 'Montserrat';
+    font-style: italic;
+}
+
+#contact form{
+    display: block;
+}
+
+#contact input, #contact label, #contact fieldset{
+    display: block;
+}
+
+#contact fieldset input{
+    display: inline;
+}
+
+#contact label, #contact fieldset{
+    text-transform: uppercase;
+}
+
+#contact fieldset label{
+    text-transform: none;
+}
+
+#contact input, #contact select{
+    border: 2px solid var(--purple);
+}
+
+#mySubmit {
+    background-color: var(--purple);
+}
+
+/* ----- FOOTER -----*/
+ footer {
+    background-color: var(--light-gray\\);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    
+    
+ }
+
+ footer p{
+    padding: 1rem 0;
+ }
+
+ footer a {
+    text-decoration: none;
+    color: var(--black);
+    padding: .75rem;
+ }
+/* ----- SMALL SCREEN STYLES (320 PX) -----*/
