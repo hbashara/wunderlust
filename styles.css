@@ -156,7 +156,7 @@ q,
 small,
 nav,
 button,
-form, 
+form,
 footer {
     font-family: 'Montserrat';
 }
@@ -174,7 +174,7 @@ footer {
     --black: #000000;
 }
 
-
+/* --- Skip Styles --- */
 
 #skip {
     position: absolute;
@@ -193,8 +193,9 @@ footer {
 
 /* --- Header --- */
 
-html{
+body {
     min-width: 320px;
+    /* visual for responsive design */ /*border: 5px solid red;*/
 }
 
 header {
@@ -203,13 +204,28 @@ header {
     background: linear-gradient(var(--teal), var(--white));
 }
 
-h1{
+
+h1 {
     font-size: 40px;
     color: var(--dark-gray);
+    padding-top: 1rem;
 
 }
 
-/* Hidden Accessibility */
+header h1,
+header p {
+    padding-left: 1rem;
+}
+
+h2,
+h3 {
+    font-size: 32px;
+}
+
+
+
+/* --- Hidden Accessibility --- */
+
 .sr-only {
     position: absolute;
     left: -10000px;
@@ -219,7 +235,8 @@ h1{
     overflow: hidden;
 }
 
-/* Nav */
+/* --- Nav --- */
+
 #menu-toggle {
     display: flex;
     flex-direction: column;
@@ -240,9 +257,12 @@ h1{
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
+    position: absolute;
+    right: 0px;
+    top: 50px;
 }
 
-#menu-toggle label:hover {}
+/* #menu-toggle label:hover {} */
 
 #menu-toggle ul {
     position: absolute;
@@ -275,7 +295,7 @@ h1{
 
 }
 
-#menu-toggle input:checked~label:hover {}
+/* #menu-toggle input:checked~label:hover {} */
 
 #menu-toggle input:checked~ul {
     position: absolute;
@@ -285,10 +305,14 @@ h1{
     width: 100%;
 }
 
-#menu-toggle input:not(:checked)~ul {}
+/* #menu-toggle input:not(:checked)~ul {} */
 
 
 /* --- Main --- */
+
+article {
+    padding-top: 3rem;
+}
 
 article>section {
     padding: 1rem;
@@ -299,6 +323,16 @@ h3 {
 }
 
 /* Intro Section */
+
+#intro h2,
+#intro p {
+    padding-left: 1rem;
+}
+
+#intro p {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
 
 #intro #img-grid {
     display: grid;
@@ -366,6 +400,9 @@ h3 {
 
 #testimonials h4 {
     text-transform: uppercase;
+    font-weight: bold;
+    font-size: 28px;
+    padding: 5px;
 }
 
 #testimonials q {
@@ -382,6 +419,7 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+
 }
 
 #about section {
@@ -392,58 +430,98 @@ h3 {
     text-transform: uppercase;
 }
 
+
+
 /* Contact */
 
-#contact h3 > span {
+#contact h3>span {
     font-family: 'Montserrat';
     font-style: italic;
+    font-size: 18px;
 }
 
-#contact form{
+#contact form {
     display: block;
+
 }
 
-#contact input, #contact label, #contact fieldset{
+#contact input,
+#contact label,
+#contact fieldset {
     display: block;
+    font-weight: bold;
 }
 
-#contact fieldset input{
+.required {
+    color: var(--purple);
+    padding: 5px;
+    font-weight: bold;
+}
+
+#contact fieldset input {
     display: inline;
 }
 
-#contact label, #contact fieldset{
+#contact label,
+#contact fieldset {
     text-transform: uppercase;
+    margin-top: 15px;
 }
 
-#contact fieldset label{
+#contact fieldset label {
     text-transform: none;
 }
 
-#contact input, #contact select{
+#contact input,
+#contact select {
     border: 2px solid var(--purple);
+    width: 100%;
+    padding: 10px 5px;
 }
 
 #mySubmit {
     background-color: var(--purple);
+    width: 100%;
+    margin-top: 15px;
+    color: var(--white);
 }
 
 /* ----- FOOTER -----*/
- footer {
-    background-color: var(--light-gray\\);
+footer {
+    background-color: var(--light-gray);
     text-align: center;
     display: flex;
     flex-direction: column;
-    
-    
- }
 
- footer p{
+
+}
+
+footer p {
     padding: 1rem 0;
- }
+}
 
- footer a {
+footer a {
     text-decoration: none;
     color: var(--black);
     padding: .75rem;
- }
-/* ----- SMALL SCREEN STYLES (320 PX) -----*/
+}
+
+/* ----- MEDIUM SCREEN STYLES -----*/
+
+@media screen and (min-width: 500px) {
+    body {
+        /* visual for responsive design */
+        /* border: 5px solid purple; */
+        min-width: 500px;
+    }
+}
+
+/* ----- LARGE SCREEN STYLES -----*/
+
+@media screen and (min-width: 768px) {
+    body {
+        /* visual for responsive design */
+        /* border: 5px solid green; */
+        min-width: 768px;
+    }
+}
